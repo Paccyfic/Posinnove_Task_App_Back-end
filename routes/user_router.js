@@ -6,7 +6,7 @@ const authenticateToken = require('../middleware/auth_middleware.js');
 router.post('/registration', UserController.register);
 router.post('/login', UserController.login);
 
-// Protected routes (require authentication)
+// Protected routes (requiring authentication)
 router.get('/profile', authenticateToken, UserController.getProfile);
 router.get('/dashboard', authenticateToken, UserController.dashboard);
 

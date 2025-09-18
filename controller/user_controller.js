@@ -4,7 +4,6 @@ exports.register = async(req,res,next)=>{
     try {
         const {username,email,password} = req.body;
         
-        // Basic validation
         if(!username || !email || !password){
             return res.status(400).json({
                 status: false, 
@@ -71,7 +70,6 @@ exports.login = async(req,res,next)=>{
 
 exports.getProfile = async(req,res,next)=>{
     try {
-        // This will be called on protected routes
         res.json({
             status: true,
             message: "Profile retrieved successfully",
